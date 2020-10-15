@@ -2154,6 +2154,52 @@ suite = {
     },
 
 
+    "org.graalvm.reachability" : {
+      "subDir" : "src",
+      "sourceDirs" : ["src"],
+      "dependencies" : [
+        "org.graalvm.compiler.java",
+        "org.graalvm.compiler.phases.common",
+        "org.graalvm.compiler.api.runtime",
+        "org.graalvm.compiler.runtime",
+      ],
+      "requiresConcealed" : {
+        "jdk.internal.vm.ci" : [
+          "jdk.vm.ci.meta",
+          "jdk.vm.ci.code",
+          "jdk.vm.ci.services",
+          "jdk.vm.ci.runtime",
+          "jdk.vm.ci.hotspot",
+        ],
+      },
+      "annotationProcessors" : ["GRAAL_PROCESSOR"],
+      "checkstyle" : "org.graalvm.compiler.graph",
+      "javaCompliance" : "11+",
+      "workingSets" : "Graal,Java",
+    },
+
+
+    "org.graalvm.reachability.test" : {
+      "subDir" : "src",
+      "sourceDirs" : ["src"],
+      "dependencies" : [
+        "org.graalvm.reachability",
+        "mx:JUNIT",
+      ],
+      "requiresConcealed" : {
+        "jdk.internal.vm.ci" : [
+          "jdk.vm.ci.meta",
+          "jdk.vm.ci.code",
+          "jdk.vm.ci.services",
+          "jdk.vm.ci.runtime",
+        ],
+      },
+      "annotationProcessors" : ["GRAAL_PROCESSOR"],
+      "checkstyle" : "org.graalvm.compiler.graph",
+      "javaCompliance" : "11+",
+      "workingSets" : "Graal,Java",
+    },
+
   },
 
   "distributions" : {
@@ -2216,6 +2262,7 @@ suite = {
         "org.graalvm.compiler.replacements.jdk12.test",
         "org.graalvm.compiler.core.jdk9.test",
         "org.graalvm.compiler.hotspot.jdk9.test",
+        "org.graalvm.reachability.test",
       ],
       "distDependencies" : [
         "GRAAL_ONLY_TEST",

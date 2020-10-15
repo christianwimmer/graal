@@ -42,7 +42,7 @@ public class CoreProvidersImpl implements CoreProviders {
     protected final PlatformConfigurationProvider platformConfigurationProvider;
     protected final MetaAccessExtensionProvider metaAccessExtensionProvider;
 
-    protected CoreProvidersImpl(MetaAccessProvider metaAccess, ConstantReflectionProvider constantReflection, ConstantFieldProvider constantFieldProvider, LoweringProvider lowerer,
+    public CoreProvidersImpl(MetaAccessProvider metaAccess, ConstantReflectionProvider constantReflection, ConstantFieldProvider constantFieldProvider, LoweringProvider lowerer,
                     Replacements replacements, StampProvider stampProvider, ForeignCallsProvider foreignCalls, PlatformConfigurationProvider platformConfigurationProvider,
                     MetaAccessExtensionProvider metaAccessExtensionProvider) {
         this.metaAccess = metaAccess;
